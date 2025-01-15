@@ -1,6 +1,8 @@
 import pygame
 import sys
 
+from front_house_layout import front_house_layout
+
 # initializing game start
 pygame.init()
 clock = pygame.time.Clock()
@@ -15,6 +17,7 @@ running = True
 while running:
     screen.fill('white')
     mouse = pygame.mouse.get_pos()
+    front_house_layout(screen)
 
     # for loop through the event queue
     for event in pygame.event.get():
