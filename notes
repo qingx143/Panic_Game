@@ -1,3 +1,7 @@
 BRANCHES:
+- frontHouse:
+    the front house of the bakery -> all interactions and character movements
+- utilities:
+    for adding extra functions needed throughout the code
 
 BUGS:
