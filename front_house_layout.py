@@ -20,3 +20,6 @@ def front_house_layout(screen):
     # tables
     pygame.draw.ellipse(screen, 'black', pygame.Rect(750, 170, 170, 140))
     pygame.draw.ellipse(screen, 'black', pygame.Rect(750, 440, 170, 140))
+
+    # em sucks
+    print("em really sucks")
