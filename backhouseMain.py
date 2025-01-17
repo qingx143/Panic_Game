@@ -41,13 +41,16 @@ def boilSausage(screen): #boil sausages in this screen
 
     #if pygame.mouse.get_pressed()[0]
 
-def frySausage(screen): #fry sausage
+def frySausage(screen, mouse): #fry sausage
     screen.fill('green')
     pygame.draw.circle(screen, gray, (700, 350), 250) #pan
     pygame.draw.circle(screen, white, (220, 250), 200) #plate of sausages
     #pygame.transform.rotate(image, angle) //i'll make the pictures of the sausages tilted so it looks randomly put onto the plate
 
-def dough(screen): #divide dough and roll dough into strip then roll into a strand
+def dough(screen, mouse): #divide dough and roll dough into strip then roll into a strand
     screen.fill(red)
+
+def dough_clicks(screen, mouse):
+    pass
     
     #pygame.draw.rect(screen, green, pygame.Rect(50, 50, 200, 300)) #
