@@ -1,5 +1,6 @@
 import pygame
 import sys
+from backhouseMain import boilSausage, frySausage, dough
 
 # initializing game start
 pygame.init()
@@ -14,6 +15,7 @@ running = True
 
 while running:
     screen.fill('white')
+    dough(screen)
     mouse = pygame.mouse.get_pos()
 
     # for loop through the event queue
