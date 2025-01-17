@@ -1,7 +1,7 @@
 import pygame
 import sys
 
-from front_house_layout import front_house_layout
+from front_house import front_house_layout
 
 # initializing game start
 pygame.init()
