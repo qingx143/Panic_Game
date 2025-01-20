@@ -17,7 +17,7 @@ while running:
     screen.fill('white')
     mouse = pygame.mouse.get_pos()
 
-    backhouseMain.dough(screen, mouse)
+    backhouseMain.boilSausage(screen)
 
     # for loop through the event queue
     for event in pygame.event.get():
@@ -26,8 +26,9 @@ while running:
             running = False
             sys.exit()
 
-        if event.type == pygame.MOUSEBUTTONUP:
-            backhouseMain.dough_clicks(screen, mouse)
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            backhouseMain.boilSausage_clicks(screen, mouse)
+
 
     pygame.display.update()
     clock.tick(60)
