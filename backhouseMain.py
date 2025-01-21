@@ -7,56 +7,72 @@ white = (255,255,255)
 yellow = (120, 0, 0)
 gray = (128, 128, 128)
 
-saus1x = 75
-saus2x = 115
-saus3x = 155
-saus4x = 195
-saus1y = saus2y = saus3y = saus4y = 75
-
 class Sausage:
     x: float
     y: float
     w: float
     h: float
     colour: tuple[int, int, int]
-    
+    # rect  = pygame.Rect(self.x, self.y, self.w, self.h)
+
     def __init__(self, x, y, w, h, colour):
         self.x = x
         self.y = y
         self.w = w
         self.h = h
         self.colour = colour
+        self.rect  = pygame.Rect(self.x, self.y, self.w, self.h)
+
     
     def show(self, screen):
         pygame.draw.rect(screen, self.colour, pygame.Rect(self.x, self.y, self.w, self.h), 0, 20)
-    
-    def update(self):
-        self.hover = self.rect.collidepoint(pygame.mouse.get_pos())
-        if self.hover is True:
-            print(f'sausage at {saus1x}, {saus1y}')
+
+    def update(self, x, y):
+        #self.x = x
+        #self.y = y
+        # self.hover = self.rect.collidepoint(pygame.mouse.get_pos())
+        # if self.hover is True:
+        #     print(f'sausage at {saus1x}, {saus1y}')
+        if self.rect.collidepoint(pygame.mouse.get_pos()):
+            self.x = x
+            self.y = y
+            print('poop')
+        print(self.x, self.y)
 
 
-def boilSausage_clicks(screen, mouse):
-   if pygame.mouse.get_pressed()[0]:
-       x, y = pygame.mouse.get_pos()
-       #print(f'Mouse clicked at {x}, {y}')
-       saus1x = x
-       saus1y = y
-       print(f'sausage at {saus1x}, {saus1y}')
 
-def boilSausage(screen): #boil sausages in this screen
+
+
+def boilSausage_clicks(screen, mouse, saus1, saus2, saus3, saus4):
+    if pygame.mouse.get_pressed()[0]:
+        x, y = pygame.mouse.get_pos()
+        # if x <= 90 and x >= 60:
+        # saus1.update(x - 15, y - 125)
+        # elif x <= 130 and x >= 100:
+        # saus2.update(x - 15, y - 125)
+        # elif x <= 170 and x >= 140:
+        # saus3.update(x - 15, y - 125)
+        # elif x <= 210 and x >= 180:
+        saus4.update(x - 15, y - 125)
+
+
+def boilSausage(screen, saus1, saus2, saus3, saus4): #boil sausages in this screen
     screen.fill('blue')
     pygame.draw.circle(screen, white, (600, 350), 250) #pot
     pygame.draw.rect(screen, green, pygame.Rect(50, 50, 200, 300)) #sasuage case
 
-    sausage1 = Sausage(saus1x, saus1y, 30, 250, (255, 0, 0))
-    sausage1.show(screen)
-    sausage2 = Sausage(saus2x, saus2y, 30, 250, (255, 0, 0))
-    sausage2.show(screen)
-    sausage3 = Sausage(saus3x, saus3y, 30, 250, (255, 0, 0))
-    sausage3.show(screen)
-    sausage4 = Sausage(saus4x, saus4y, 30, 250, (255, 0, 0))
-    sausage4.show(screen)
+    saus1.show(screen)
+    saus2.show(screen)
+    saus3.show(screen)
+    saus4.show(screen)
+    # sausage1 = Sausage(saus1x, saus1y, 30, 250, (255, 0, 0))
+    # sausage1.show(screen)
+    # sausage2 = Sausage(saus2x, saus2y, 30, 250, (255, 0, 0))
+    # sausage2.show(screen)
+    # sausage3 = Sausage(saus3x, saus3y, 30, 250, (255, 0, 0))
+    # sausage3.show(screen)
+    # sausage4 = Sausage(saus4x, saus4y, 30, 250, (255, 0, 0))
+    # sausage4.show(screen)
 
 
 def frySausage(screen, mouse): #fry sausage
